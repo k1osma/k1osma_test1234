@@ -2,15 +2,10 @@ import openai
 from prompt_toolkit import prompt
 import requests
 
-# Отправьте GET-запрос на сервер, чтобы получить API-ключ
 response = requests.get("https://192.168.31.121:5000/api_key", verify=False)
 api_key = response.text
 
-# Используйте полученный API-ключ в вашем коде
 openai.api_key = api_key
-
-# Продолжайте работать с OpenAI API, используя ключ
-
 
 print(''' 
   /$$$$$$  /$$                   /$$      /$$$$$$  /$$$$$$$  /$$$$$$$$
