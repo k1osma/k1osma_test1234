@@ -3,7 +3,7 @@ from prompt_toolkit import prompt
 import requests
 
 # Отправьте GET-запрос на сервер, чтобы получить API-ключ
-response = requests.get("http://123.456.789.123:5000/api_key")
+response = requests.get("https://192.168.31.121:5000/api_key")
 api_key = response.text
 
 # Используйте полученный API-ключ в вашем коде
