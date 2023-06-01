@@ -1,15 +1,16 @@
 import openai
 from prompt_toolkit import prompt
-import configparser
+import requests
 
-# Создайте объект ConfigParser и загрузите конфигурацию из файла
-config = configparser.ConfigParser()
-config.read('config.ini')
+# Отправьте GET-запрос на сервер, чтобы получить API-ключ
+response = requests.get("http://127.0.0.1:5000/api_key")
+api_key = response.text
 
-# Получите значение ключа из конфигурации
-openai_key = config.get('API', 'openai_key')
+# Используйте полученный API-ключ в вашем коде
+openai.api_key = api_key
 
-openai.api_key = openai_key
+# Продолжайте работать с OpenAI API, используя ключ
+
 
 print('''                                             
 $$ |      $$$$ |                                             
